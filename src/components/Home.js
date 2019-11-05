@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Layout from './Layout'
 import ImageHeader from '../assets/image-header.svg'
 import ImageSection3 from '../assets/image-section3.svg'
+import Billing from '../assets/icon-billing.svg'
+import Shipping from '../assets/icon-shipping.svg'
+import Time from '../assets/icon-time.svg'
 
 class Home extends Component {
   state = {
@@ -23,11 +26,23 @@ class Home extends Component {
             </div>
           </header>
 
-          <section className="container">
-            <div>
-              <article></article>
-              <article></article>
-              <article></article>
+          <section className="container section2">
+            <div className="section2-article">
+              <article>
+                <img src={Time} alt="time-logo"/>
+                <p><strong>Ahorra Tiempo</strong> al gestionar todas tus suscripciones en un solo lugar. Deja que el menu simplificado de Cuboxes haga el trabajo duro por ti.</p>
+              </article>
+              <article>
+                <img src={Billing} alt="billing-logo"/>
+                <p><strong>Un solo</strong> cargo al pagar en Cuboxes todas tus suscripciones se aplican en un solo cargo, no mas suscribciones duplicadas ni olvidadas.</p>
+              </article>
+              <article>
+                <img src={Shipping} alt="shipping-logo"/>
+                <p><strong>Paga un</strong> solo envío al hacer tus suscripciones con Cuboxes, puedes hacer que todas te lleguen al mismo tiempo, evitando pagar envíos adicionales.</p>
+              </article>
+            </div>
+            <div className="section2-button">
+              <button className="section2-button-filled">Quiero aplicar para ser un Cuboxer</button>
             </div>
           </section>
 
