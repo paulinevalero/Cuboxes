@@ -5,13 +5,29 @@ import ImageSection3 from '../assets/image-section3.svg'
 import Billing from '../assets/icon-billing.svg'
 import Shipping from '../assets/icon-shipping.svg'
 import Time from '../assets/icon-time.svg'
+import Form from '../components/Form'
 
 class Home extends Component {
   state = {
-    isModalOpen: false
+    isModalOpen: false,
+    isActive: false
+  }
+  displayForm = () => {
+    this.setState({isModalOpen: true})
+  }
+  closeForm = () => {
+    this.setState({isModalOpen: false})
+  }
+  isActive = () =>{
+    this.setState({isActive: true})
+  }
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.setState({isOpen: false})
   }
 
   render() {
+    const {isModalOpen} = this.state
     return (
       <Layout>
         <div>
@@ -42,7 +58,8 @@ class Home extends Component {
               </article>
             </div>
             <div className="section2-button">
-              <button className="section2-button-filled">Quiero aplicar para ser un Cuboxer</button>
+              <button onClick={this.displayForm} className="section2-button-filled">Quiero aplicar para ser un Cuboxer</button>
+              <Form isModalOpen={isModalOpen} closeForm={this.closeForm} onSubmit={this.onSubmit}/>
             </div>
           </section>
 
